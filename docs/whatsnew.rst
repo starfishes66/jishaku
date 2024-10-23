@@ -8,7 +8,7 @@ Version 2.5.2
 
 This version is a **backport release** to fix 3.12 and some other long-standing compatibility bugs.
 
-This **does not** contain any new features from master - it is a special bug fix only release. You can see the exact changes by `comparing tags on GitHub <https://github.com/Gorialis/jishaku/compare/2.5.1...2.5.2>`_.
+This **does not** contain any new features from master - it is a special bug fix only release. You can see the exact changes by `comparing tags on GitHub <https://github.com/scarletcafe/jishaku/compare/2.5.1...2.5.2>`_.
 
 Version 2.5.1
 -------------
@@ -135,7 +135,7 @@ A new implementation of PaginatorInterface has been created using Discord's inte
 It is available when using discord.py 2.0.0 or greater (currently alpha).
 
 Jishaku will now avoid uploading files either when detecting the author is on mobile or through an explicit ``JISHAKU_FORCE_PAGINATOR`` switch.
-This is to better support mobile platforms that do not have inline file previews yet. (`PR #111 <https://github.com/Gorialis/jishaku/pull/111>`_).
+This is to better support mobile platforms that do not have inline file previews yet. (`PR #111 <https://github.com/scarletcafe/jishaku/pull/111>`_).
 
 Humanize has been removed as a dependency. Selftest now uses Discord's own relative timestamp formatting markdown extension for timing,
 and pretty printing of memory usage has been implemented within the Feature itself.
