@@ -94,6 +94,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: publish
     permissions:
+      # Required to create release
+      contents: write
+      # Required for OIDC
       id-token: write
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
 
