@@ -86,7 +86,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: distributions-${{ matrix.python.version }}-${{ matrix.discord-py.NAME }}
+        name: distributions-${{ matrix.os }}-${{ matrix.python.version }}-${{ matrix.discord-py.NAME }}
         path: dist/*
 
   upload_pypi:
