@@ -3,6 +3,21 @@
 What's new?
 ================
 
+Version 2.6.0
+-------------
+
+My username has changed. This version fixes package metadata associated with this as well as bringing the following (long-overdue) changes:
+
+- The `jsk sql` command, which will try to identify SQL adapters on your bot and provide an interface for using them.
+- `python -m jishaku` will now attempt to copy the automatically generated bot prefix to your clipboard if the appropriate libraries are installed.
+- Support for translations in `jsk sync`
+- `jsk cancel` now uses Discord markdown timestamps to indicate when tasks were started.
+- `jsk specialist` works like `specialist <https://pypi.org/project/specialist/>`_ by executing Python code and reporting areas in which Python 3.11+ optimizations apply.
+- The version of `import_expression` used has been bumped, making inline imports possible again on new Python versions.
+- Some fixes to how `jsk sh` and similar commands work to make them function better on UNIX systems.
+
+Because it has been such a long time since the last formal release, a lot of these improvements have not received much field testing and may contain regressions. Please report any issues you find.
+
 Version 2.5.2
 -------------
 
