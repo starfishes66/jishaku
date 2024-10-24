@@ -92,6 +92,9 @@ jobs:
   upload_pypi:
     needs: [ build-dists ]
     runs-on: ubuntu-latest
+    environment: publish
+    permissions:
+      id-token: write
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
 
     steps:
@@ -117,7 +120,12 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          pattern: distributions-*
+          # There is currently a bug where download-artifact downloading multiple files of the same name corrupts the file.
+          # https://github.com/actions/download-artifact/issues/298
+          # Very cool.
+          # We don't have any native code so using the latest Ubuntu artifact should be OK.
+          #pattern: distributions-*
+          pattern: distributions-ubuntu-latest-3.13-pypi
           merge-multiple: true
           path: dist
 
@@ -139,6 +147,3 @@ jobs:
 
       - name: Publish packages to PyPI
         uses: pypa/gh-action-pypi-publish@v1.10.3
-        with:
-          user: __token__
-          password: ${{ secrets.pypi_api_token }}
