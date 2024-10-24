@@ -136,11 +136,11 @@ class Feature(commands.Cog):
 
             return command_type(**self.kwargs)(self.callback)
 
-    load_time: datetime = datetime.utcnow().replace(tzinfo=timezone.utc)
+    load_time: datetime = datetime.now(timezone.utc)
 
     def __init__(self, *args: typing.Any, **kwargs: typing.Any):
         self.bot: BotT = kwargs.pop('bot')
-        self.start_time: datetime = datetime.utcnow().replace(tzinfo=timezone.utc)
+        self.start_time: datetime = datetime.now(timezone.utc)
         self.tasks: typing.Deque[CommandTask] = collections.deque()
         self.task_count: int = 0
 
