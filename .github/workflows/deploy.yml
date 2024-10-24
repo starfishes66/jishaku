@@ -130,7 +130,7 @@ jobs:
           export tag_name="${GITHUB_REF##*/}"
           python create_dist_summary.py
           assets=()
-          for asset in ./dist/*.{whl,egg,tar.gz}; do
+          for asset in ./dist/*.{whl,tar.gz}; do
             assets+=("-a" "$asset")
           done
           tag_name="${GITHUB_REF##*/}"
