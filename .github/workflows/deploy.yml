@@ -39,6 +39,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip setuptools wheel
 
+        # 3.13 needs audioop-lts
+        pip install -U "audioop-lts; python_version>='3.13'"
+
         pip install -U "${{ matrix.discord-py.PIP_TARGET }}" --extra-index-url https://scarletcafe.github.io/pip/
         pip install -U $(find requirements -name *.txt -print | sed -e 's/^/-r /' | tr '\n' ' ')
 
