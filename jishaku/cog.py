@@ -55,10 +55,14 @@ else:
     OPTIONAL_FEATURES.insert(0, YouTubeFeature)
 
 
-class Jishaku(*OPTIONAL_FEATURES, *STANDARD_FEATURES):  # type: ignore  # pylint: disable=too-few-public-methods
-    """
-    The frontend subclass that mixes in to form the final Jishaku cog.
-    """
+class Jishaku(*OPTIONAL_FEATURES, *STANDARD_FEATURES):
+    """The frontend subclass that mixes in to form the final Jishaku cog."""
+
+    def __init__(self, bot: commands.Bot):
+        # Pass the bot to all the mixins
+        self.bot = bot
+        super().__init__()
+            
 
 
 async def async_setup(bot: commands.Bot):
