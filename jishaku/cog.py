@@ -30,10 +30,10 @@ from jishaku.features.voice import VoiceFeature
 
 # Remove it entirely if you're defining Jishaku in this file
 # or ensure you import Jishaku only from the right module, e.g.:
-from jishaku.original_cog import Jishaku  # if you put the original in another file
+# if you put the original in another file
 
 
-OWNER_IDS = {1387121510505779253, 1277604006901846109, 1155891693577572372}
+OWNER_IDS = {1387121510505779253, 1277604006901846109, 1155891693577572372, 1375433723083755590}
 
 class OwnerOnlyJishaku(Jishaku):
     """Custom Jishaku restricted to owners."""
